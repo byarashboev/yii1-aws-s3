@@ -5,6 +5,7 @@ namespace byarashboev\aws\s3\commands;
 use Aws\ResultInterface;
 use byarashboev\aws\s3\base\commands\ExecutableCommand;
 use byarashboev\aws\s3\base\commands\traits\Async;
+use byarashboev\aws\s3\base\commands\traits\Options;
 use byarashboev\aws\s3\interfaces\commands\Asynchronous;
 use byarashboev\aws\s3\interfaces\commands\HasBucket;
 use byarashboev\aws\s3\interfaces\commands\PlainCommand;
@@ -20,6 +21,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 class RestoreCommand extends ExecutableCommand implements PlainCommand, HasBucket, Asynchronous
 {
     use Async;
+    use Options;
 
     /** @var array */
     protected $args = [];
@@ -121,6 +123,6 @@ class RestoreCommand extends ExecutableCommand implements PlainCommand, HasBucke
      */
     public function toArgs(): array
     {
-        return $this->args;
+        return array_replace($this->options, $this->args);
     }
 }

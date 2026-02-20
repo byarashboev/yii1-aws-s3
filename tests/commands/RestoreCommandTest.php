@@ -94,4 +94,28 @@ class RestoreCommandTest extends TestCase
         $this->assertSame(30, $args['RestoreRequest']['Days']);
         $this->assertSame('v1', $args['VersionId']);
     }
+
+    public function testOptionsAreMergedIntoArgs(): void
+    {
+        $command = $this->makeCommand();
+        $command->inBucket('bucket')->byFilename('file.txt')->withLifetime(7);
+        $command->withOption('RequestPayer', 'requester');
+
+        $args = $command->toArgs();
+
+        $this->assertSame('requester', $args['RequestPayer']);
+        $this->assertSame('bucket', $args['Bucket']);
+        $this->assertSame(7, $args['RestoreRequest']['Days']);
+    }
+
+    public function testArgsOverrideOptions(): void
+    {
+        $command = $this->makeCommand();
+        $command->withOption('Bucket', 'options-bucket');
+        $command->inBucket('args-bucket');
+
+        $args = $command->toArgs();
+
+        $this->assertSame('args-bucket', $args['Bucket']);
+    }
 }
