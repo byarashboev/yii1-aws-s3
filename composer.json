@@ -1,0 +1,39 @@
+{
+	"name": "byarashboev/yii1-aws-s3",
+	"description": "Amazon S3 or Amazon Simple Storage Service component for Yii1",
+	"authors": [
+		{
+			"name": "Bahodir Yarashboev",
+			"email": "byarashboev@gmail.com"
+		}
+	],
+	"type": "library",
+	"keywords": [
+		"yii1",
+		"yii",
+		"extension",
+		"component",
+		"aws-s3",
+		"aws",
+		"s3"
+	],
+	"license": "MIT",
+	"require": {
+		"php": ">=7.4.0",
+		"yiisoft/yii": "~1.1",
+		"aws/aws-sdk-php": "~3.263"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "~9.5.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"byarashboev\\aws\\s3\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"byarashboev\\aws\\s3\\tests\\": "tests/"
+		}
+	}
+}
