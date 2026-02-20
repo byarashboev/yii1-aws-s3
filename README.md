@@ -224,25 +224,6 @@ protected function getPresignedUrlDuration($attribute)
 }
 ```
 
-## Changes from Yii2 Version
-
-| Yii2 | Yii1 |
-|---|---|
-| `yii\base\Component` | `CApplicationComponent` |
-| `Yii::$app->get('s3')` | `Yii::app()->getComponent('s3')` |
-| `Yii::createObject()` | `new $class()` |
-| `yii\web\UploadedFile` | `CUploadedFile` |
-| `InvalidConfigException` | `CException` |
-
-### Bug Fixes from Original
-
-- Fixed `HandlerResolver` class name typo in Service defaults
-- Fixed `$this->hasError` to `$this->hasErrors()` in ModelTrait
-- Fixed `getPresignedUrlDuration()` unnecessary empty check
-- Fixed `array_filter` stripping legitimate falsy values (0, false)
-- Fixed `withOptions()` overwriting existing options (now merges)
-- Fixed `$inflector` parameter name to `$resolver` in Bus
-
 ## License
 
 MIT
