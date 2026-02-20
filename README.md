@@ -12,9 +12,9 @@ composer require byarashboev/yii1-aws-s3 "^1.0"
 
 ## Dependencies
 
-- PHP 7.4+
+- PHP 7.3+
 - [yiisoft/yii](https://github.com/yiisoft/yii) ~1.1
-- [aws/aws-sdk-php](https://github.com/aws/aws-sdk-php) ~3.263
+- [aws/aws-sdk-php](https://github.com/aws/aws-sdk-php) ~3.337.0
 
 ## Configuration
 

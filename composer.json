@@ -19,9 +19,9 @@
 	],
 	"license": "MIT",
 	"require": {
-		"php": ">=7.4.0",
+		"php": ">=7.3",
 		"yiisoft/yii": "~1.1",
-		"aws/aws-sdk-php": "~3.263"
+		"aws/aws-sdk-php": "~3.337.0"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~9.5.0"
